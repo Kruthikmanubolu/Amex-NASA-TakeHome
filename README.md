@@ -29,7 +29,7 @@ This project is built with:
 - Next.js API route acts as a backend proxy (hides API key)
 - **Caching** for improved performance and reduced API calls
 
-#### Caching Strategy (Fron /lib/cache.ts)
+#### Caching Strategy (From /lib/cache.ts)
 
 - The /api/neo route uses Next.js fetch caching:
 
