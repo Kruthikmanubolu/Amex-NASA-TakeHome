@@ -58,7 +58,8 @@ This project is built with:
 - Pre-commit and Pre-Push Hooks
 
 - Husky + lint-staged
-- run lint + type-check on staged files before commit and push
+
+- run lint + type-check on staged files before commit and push (Added formatting while pushing so that code stays clean)
 
 #### Prevents broken commits
 
