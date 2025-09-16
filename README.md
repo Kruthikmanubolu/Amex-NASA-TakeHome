@@ -55,10 +55,10 @@ This project is built with:
 
 - Run with npm run lint or npm run format
 
-- Pre-commit Hooks
+- Pre-commit and Pre-Push Hooks
 
 - Husky + lint-staged
-- run lint + type-check on staged files before commit
+- run lint + type-check on staged files before commit and push
 
 #### Prevents broken commits
 
