@@ -5,7 +5,7 @@ type CacheEntry<T> = {
 
 const cache: Record<string, CacheEntry<unknown>> = {};
 
-const DEFAULT_TTL = 1000 * 60 * 10; // 10 minutes
+const DEFAULT_TTL = 1000 * 60 * 10;
 
 export function setCache<T>(
   key: string,

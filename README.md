@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NASA Dashboard
+
+A take-home challenge project that displays a list of the **closest Near-Earth Objects (NEOs)** for a given date using the [NASA NeoWs API](https://api.nasa.gov/).
+
+This project is built with:
+
+- **Next.js 14+** (App Router, React, TypeScript)
+- **TailwindCSS** for styling
+- **Next.js API Routes** to proxy NASA API calls (with caching)
+- **ESLint + Prettier** for clean code
+
+---
+
+## Features
+
+- Date picker to select a specific day
+- Fetches data from NASA’s **Asteroids NeoWs API**
+- Displays NEO data in a sortable table:
+  - Name
+  - Estimated Diameter (meters)
+  - Closest Approach Distance (km)
+  - Relative Velocity (km/s)
+- Sorting by:
+  - Size
+  - Closeness to Earth
+  - Relative Velocity
+- Search Functionality:
+  - Can Search on any parameter
+- Next.js API route acts as a backend proxy (hides API key)
+- **Caching** for improved performance and reduced API calls
+
+#### Caching Strategy (Fron /lib/cache.ts)
+
+- The /api/neo route uses Next.js fetch caching:
+
+- Results for each date are cached for 1 hour (revalidate: 3600).
+
+- Subsequent requests for the same date within the cache window are served from cache.
+
+- Reduces load on the NASA API and improves performance.
+
+### OpenAPI Schema
+
+- Visit /api/docs to see the schema of OpenAPI
+
+---
+
+## Tech Stack
+
+- **Next.js** (App Router, TypeScript)
+- **React**
+- **TailwindCSS**
+- **ESLint + Prettier**
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/nasa-dashboard.git
+cd nasa-dashboard
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+
+```
+
+### 3. Environment Variables
+
+#### Create a .env file in the project root
+
+```bash
+NASA_API_KEY=DEMO_KEY or Your-API-Key
+```
+
+### 4. Run the Dev Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
