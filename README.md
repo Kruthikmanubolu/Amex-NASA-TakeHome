@@ -45,6 +45,31 @@ This project is built with:
 
 ---
 
+### Developer Experience Improvements (Have implemented already)
+
+#### To make the project easier to develop and maintain, the following DX improvements were added:
+
+- Linting & Formatting
+
+- ESLint + Prettier ensure consistent code style
+
+- Run with npm run lint or npm run format
+
+- Pre-commit Hooks
+
+- Husky + lint-staged
+- run lint + type-check on staged files before commit
+
+#### Prevents broken commits
+
+- Type Safety
+
+- Full TypeScript setup with strict mode
+
+#### Environment Setup
+
+- .env for API keys
+
 ## Tech Stack
 
 - **Next.js** (App Router, TypeScript)
